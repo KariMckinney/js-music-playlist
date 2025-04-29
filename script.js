@@ -94,22 +94,25 @@ let songs = [
 
    ];
 
-   const songsSectionElement = document.getElementById("songs")
+   const songListElement = document.getElementById("songs")
 
    for (let song of songs) {
     console.log(song);
 
 
-    const headingElement = document.createElement("h3");
+const songDivElement = document.createElement("div");
+const songTitleElement = document.createElement("h3");
+const songArtistElement = document.createElement("p")
+const songDurationElement = document.createElement("p")
 
-    const songDivElement = document.createElement("div");
+songTitleElement.innerHTML = song.title;
+songArtistElement.innerHTML = song.artist;
+songDurationElement.innerHTML = song.duration;
 
-    songDivElement.classList.add("song-div");
+songDivElement.appendChild(songTitleElement);
+songDivElement.appendChild(songArtistElement);
+songDivElement.appendChild(songDurationElement);
 
-    headingElement.innerHTML = song.title;
-
-    songDivElement.appendChild(headingElement);
-
-    songsSectionElement.appendChild(songDivElement);
+songListElement.appendChild(songDivElement);
 
 }
